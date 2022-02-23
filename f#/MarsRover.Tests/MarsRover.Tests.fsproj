@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="PositionTest.fs" />
     <Content Include="Inbox.txt" />
+    <Compile Include="RotateLeftTest.fs" />
   </ItemGroup>
 
   <ItemGroup>
