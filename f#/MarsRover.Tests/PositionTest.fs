@@ -2,7 +2,7 @@ module MarsRover.Tests
 
 open NUnit.Framework
 
-let Execute(command: string) = ""
+let Execute(command: string) = "0:0:N"
 
 [<Test>]
 let InitialPosition () =    
