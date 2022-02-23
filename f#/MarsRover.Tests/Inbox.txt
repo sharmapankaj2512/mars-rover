@@ -1,0 +1,20 @@
+- initial position of rover 0,0
+- limits on rover postions 10, 10
+
+- L decrements the x co-ordinate
+- R increments the x co-ordinate
+- M increments the y co-ordinate
+ 
+
+- intial position of rover 0:0:N 
+- L at 0:0:N -> 0:0:W
+- L at 0:0:W -> 0:0:S
+- L at 0:0:S -> 0:0:E
+- L at 0:0:E -> 0:0:N
+ 
+- L at 0,0 keeps rover at 0,0
+- L at x, y results in x - 1, y
+- R at 10,y keeps rover at 10, y
+- R at x, y results in x + 1, y
+- RMMLM -> 2:1:N
+ 
