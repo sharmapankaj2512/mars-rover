@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <Content Include="Inbox.txt" />
-    <Compile Include="Direction.fs" />
-    <Compile Include="Rover.fs" />
     <Compile Include="PositionTest.fs" />
     <Compile Include="RotateLeftTest.fs" />
   </ItemGroup>
@@ -20,6 +18,10 @@
     <PackageReference Include="NUnit" Version="3.13.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.0.0" />
     <PackageReference Include="coverlet.collector" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MarsRover\MarsRover.fsproj" />
   </ItemGroup>
 
 </Project>
