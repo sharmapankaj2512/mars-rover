@@ -16,8 +16,7 @@ module Rover =
         | Direction.North -> "0:0:N"
         | Direction.West -> "0:0:W"
         | Direction.South -> "0:0:S"
-        | Direction.East -> "0:0:E"
-        | _ -> ArgumentOutOfRangeException() |> raise
+        | Direction.East -> "0:0:E"        
 
     let rec Navigate (rover: Rover, command: string) =
         if command.Length = 0 then
