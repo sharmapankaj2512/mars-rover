@@ -19,3 +19,4 @@ module Direction =
         | Direction.North -> Direction.East
         | Direction.East -> Direction.South
         | Direction.South -> Direction.West
+        | Direction.West -> Direction.North
