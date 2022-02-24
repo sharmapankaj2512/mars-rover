@@ -1,6 +1,5 @@
 namespace MarsRover.Tests
 
-open System
 open Direction
 
 module Rover =
@@ -16,10 +15,12 @@ module Rover =
         | Direction.North -> "0:0:N"
         | Direction.West -> "0:0:W"
         | Direction.South -> "0:0:S"
-        | Direction.East -> "0:0:E"        
+        | Direction.East -> "0:0:E"
 
-    let rec Navigate (rover: Rover, command: string) =
-        if command.Length = 0 then
-            rover
-        else
-            Navigate(rotateLeft rover, command.[1..])
+    let Navigate (rover: Rover, command: string) =
+        let rec helper (rover, commands) =
+            match commands with
+            | head :: tail -> helper (rotateLeft rover, tail)
+            | [] -> rover
+
+        helper (rover, command |> List.ofSeq)
