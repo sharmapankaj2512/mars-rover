@@ -9,6 +9,10 @@ module Rover =
     let rotateLeft (rover: Rover) =
         { rover with
               direction = Left(rover.direction) }
+        
+    let rotateRight (rover: Rover) =
+        { rover with
+              direction = Right(rover.direction) }
 
     let Position (rover: Rover) =
         match rover.direction with
@@ -20,7 +24,11 @@ module Rover =
     let Navigate (rover: Rover, command: string) =
         let rec helper (rover, commands) =
             match commands with
-            | head :: tail -> helper (rotateLeft rover, tail)
+            | head :: tail ->
+                if head = 'L' then 
+                    helper (rotateLeft rover, tail)
+                else
+                    helper (rotateRight rover, tail)
             | [] -> rover
 
         helper (rover, command |> List.ofSeq)

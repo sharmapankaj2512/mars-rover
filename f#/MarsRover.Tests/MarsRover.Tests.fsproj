@@ -11,6 +11,7 @@
     <Content Include="Inbox.txt" />
     <Compile Include="PositionTest.fs" />
     <Compile Include="RotateLeftTest.fs" />
+    <Compile Include="RotateRightTest.fs" />
   </ItemGroup>
 
   <ItemGroup>

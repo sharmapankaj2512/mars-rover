@@ -12,5 +12,8 @@ module Direction =
         | Direction.North -> Direction.West
         | Direction.West -> Direction.South
         | Direction.South -> Direction.East
-        | Direction.East -> Direction.North                
-
+        | Direction.East -> Direction.North
+        
+    let Right (direction: Direction) =
+        match direction with
+        | Direction.North -> Direction.East
