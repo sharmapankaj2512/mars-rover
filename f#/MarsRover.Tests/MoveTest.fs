@@ -5,7 +5,8 @@ open Rover
 
 module MoveTest =
     [<Test>]
-    let moveRight () =
+    [<TestCase("M", "1:0:N")>]
+    let moveRight (command: string, expectedPosition: string) =
         let rover = NewRover()
-        let updateRover = Navigate(rover, "M")
-        Assert.AreEqual("1:0:N", Position(updateRover))
+        let updateRover = Navigate(rover, command)
+        Assert.AreEqual(expectedPosition, Position(updateRover))
