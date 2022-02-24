@@ -11,7 +11,11 @@ module RotateLeftTest =
     type Rover = { direction: Direction }
     let NewRover () = { direction = Direction.North }
 
-    let Execute (rover: Rover, command: string) = Execute(command)
+    let Execute (rover: Rover, command: string) =
+        if rover.direction = Direction.North then
+            "0:0:W"
+        else
+            Execute(command)
 
     [<Test>]
     let RotateLeft () =
