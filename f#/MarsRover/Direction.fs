@@ -17,3 +17,4 @@ module Direction =
     let Right (direction: Direction) =
         match direction with
         | Direction.North -> Direction.East
+        | Direction.East -> Direction.South
