@@ -9,8 +9,22 @@ module Rover =
         | South = 2
         | East = 3
 
+    let Left (direction: Direction) =
+        if direction = Direction.North then
+            Direction.West
+        elif direction = Direction.West then
+            Direction.South
+        elif direction = Direction.South then
+            Direction.East
+        else
+            direction
+
     type Rover = { direction: Direction }
     let NewRover () = { direction = Direction.North }
+
+    let rotateLeft (rover: Rover) =
+        { rover with
+              direction = Left(rover.direction) }
 
     let Position (rover: Rover) =
         match rover.direction with
@@ -23,23 +37,5 @@ module Rover =
     let rec Navigate (rover: Rover, command: string) =
         if command.Length = 0 then
             rover
-        elif rover.direction = Direction.North then
-            Navigate(
-                { rover with
-                      direction = Direction.West },
-                command.[1..]
-            )
-        elif rover.direction = Direction.West then
-            Navigate(
-                { rover with
-                      direction = Direction.South },
-                command.[1..]
-            )
-        elif rover.direction = Direction.South then
-            Navigate(
-                { rover with
-                      direction = Direction.East },
-                command.[1..]
-            )
         else
-            rover
+            Navigate(rotateLeft rover, command.[1..])
