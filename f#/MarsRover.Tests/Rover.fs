@@ -10,14 +10,11 @@ module Rover =
         | East = 3
 
     let Left (direction: Direction) =
-        if direction = Direction.North then
-            Direction.West
-        elif direction = Direction.West then
-            Direction.South
-        elif direction = Direction.South then
-            Direction.East
-        else
-            direction
+        match direction with
+        | Direction.North -> Direction.West
+        | Direction.West -> Direction.South
+        | Direction.South -> Direction.East
+        | _ -> direction
 
     type Rover = { direction: Direction }
     let NewRover () = { direction = Direction.North }
