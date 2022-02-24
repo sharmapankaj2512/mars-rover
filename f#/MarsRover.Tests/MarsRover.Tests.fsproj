@@ -8,8 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="PositionTest.fs" />
     <Content Include="Inbox.txt" />
+    <Compile Include="Rover.fs" />
+    <Compile Include="PositionTest.fs" />
     <Compile Include="RotateLeftTest.fs" />
   </ItemGroup>
 
