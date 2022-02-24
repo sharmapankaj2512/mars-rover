@@ -14,7 +14,10 @@ module Rover =
         { rover with
               direction = Right(rover.direction) }
 
-    let move (rover: Rover) = { rover with x = rover.x + 1 }
+    let move (rover: Rover) =
+        match rover.direction with
+        | Direction.East -> { rover with x = rover.x + 1 }
+        | Direction.West -> { rover with x = rover.x - 1 }
 
     let Position (rover: Rover) =
         match rover.direction with
