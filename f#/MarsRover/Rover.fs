@@ -24,13 +24,9 @@ module Rover =
     let Navigate (rover: Rover, command: string) =
         let rec helper (rover, commands) =
             match commands with
-            | head :: tail ->
-                if head = 'L' then
-                    helper (rotateLeft rover, tail)
-                elif head = 'M' then
-                    helper ({ rover with x = rover.x + 1 }, tail)
-                else
-                    helper (rotateRight rover, tail)
+            | 'L' :: tail -> helper (rotateLeft rover, tail)
+            | 'M' :: tail -> helper ({ rover with x = rover.x + 1 }, tail)
+            | _ :: tail -> helper (rotateRight rover, tail)
             | [] -> rover
 
         helper (rover, command |> List.ofSeq)
