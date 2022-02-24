@@ -4,7 +4,16 @@ open NUnit.Framework
 open PositionTest
 
 module RotateLeftTest =
+    type Direction =
+        | North = 0
+        | West = 1
+
+    type Rover = { direction: Direction }
+    let NewRover () = { direction = Direction.North }
+
+    let Execute (rover: Rover, command: string) = Execute(command)
 
     [<Test>]
     let RotateLeft () =
-        Assert.AreEqual("0:0:W", Execute("L"))
+        let rover = NewRover()
+        Assert.AreEqual("0:0:W", Execute(rover, "L"))
