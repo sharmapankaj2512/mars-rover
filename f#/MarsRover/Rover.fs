@@ -14,21 +14,21 @@ module Rover =
         { rover with
               direction = Right(rover.direction) }
 
-    let moveRight (rover: Rover) = { rover with x = rover.x + 1 }
+    let move (rover: Rover) = { rover with x = rover.x + 1 }
 
     let Position (rover: Rover) =
         match rover.direction with
         | Direction.North -> $"{rover.x}:0:N"
         | Direction.West -> "0:0:W"
         | Direction.South -> "0:0:S"
-        | Direction.East -> "0:0:E"
+        | Direction.East -> $"{rover.x}:0:E"
 
     let Navigate (rover: Rover, command: string) =
         let rec helper (rover, commands) =
             match commands with
             | 'L' :: tail -> helper (rotateLeft rover, tail)
-            | 'M' :: tail -> helper (moveRight rover, tail)
-            | _ :: tail -> helper (rotateRight rover, tail)
+            | 'R' :: tail -> helper (rotateRight rover, tail)
+            | 'M' :: tail -> helper (move rover, tail)            
             | [] -> rover
 
         helper (rover, command |> List.ofSeq)
