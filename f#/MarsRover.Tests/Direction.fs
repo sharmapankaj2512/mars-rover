@@ -12,5 +12,5 @@ module Direction =
         | Direction.North -> Direction.West
         | Direction.West -> Direction.South
         | Direction.South -> Direction.East
-        | _ -> direction
+        | Direction.East -> Direction.North                
 
