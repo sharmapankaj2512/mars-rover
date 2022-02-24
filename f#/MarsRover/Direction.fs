@@ -18,3 +18,4 @@ module Direction =
         match direction with
         | Direction.North -> Direction.East
         | Direction.East -> Direction.South
+        | Direction.South -> Direction.West
