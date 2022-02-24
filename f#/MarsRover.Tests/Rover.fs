@@ -16,7 +16,7 @@ module Rover =
         | Direction.West -> "0:0:W"
         | _ -> ArgumentOutOfRangeException() |> raise
         
-    let Execute (rover: Rover, command: string) =
+    let Navigate (rover: Rover, command: string) =
         if rover.direction = Direction.North then
             {rover with direction = Direction.West}
         else

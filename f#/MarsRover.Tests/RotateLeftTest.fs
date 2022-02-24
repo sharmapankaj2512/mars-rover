@@ -8,4 +8,4 @@ module RotateLeftTest =
     [<Test>]
     let RotateLeft () =
         let rover = NewRover()
-        Assert.AreEqual("0:0:W", Position(Execute(rover, "L")))
+        Assert.AreEqual("0:0:W", Position(Navigate(rover, "L")))
