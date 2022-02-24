@@ -12,6 +12,7 @@
     <Compile Include="PositionTest.fs" />
     <Compile Include="RotateLeftTest.fs" />
     <Compile Include="RotateRightTest.fs" />
+    <Compile Include="MoveTest.fs" />
   </ItemGroup>
 
   <ItemGroup>

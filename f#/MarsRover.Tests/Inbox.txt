@@ -18,3 +18,16 @@
 - R at x, y results in x + 1, y
 - RMMLM -> 2:1:N
  
+ 
+move 0:0:N -> 0:1:N
+move 0:1:S -> 0:0:N
+move 0:1:E -> 1:0:N
+move 1:1:W -> 0:0:N
+
+wrap horizontal around
+move 10:0:E -> 0:0:E
+move 0:0:W -> 0:0:W
+
+wrap vertical around
+move 0:10:N -> 0:0:N
+move 0:0:S -> 0:0:S
