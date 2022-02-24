@@ -14,6 +14,8 @@ module Rover =
         { rover with
               direction = Right(rover.direction) }
 
+    let moveRight (rover: Rover) = { rover with x = rover.x + 1 }
+
     let Position (rover: Rover) =
         match rover.direction with
         | Direction.North -> $"{rover.x}:0:N"
@@ -25,7 +27,7 @@ module Rover =
         let rec helper (rover, commands) =
             match commands with
             | 'L' :: tail -> helper (rotateLeft rover, tail)
-            | 'M' :: tail -> helper ({ rover with x = rover.x + 1 }, tail)
+            | 'M' :: tail -> helper (moveRight rover, tail)
             | _ :: tail -> helper (rotateRight rover, tail)
             | [] -> rover
 
