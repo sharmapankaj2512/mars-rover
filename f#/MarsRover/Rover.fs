@@ -22,7 +22,7 @@ module Rover =
     let Position (rover: Rover) =
         match rover.direction with
         | Direction.North -> $"{rover.x}:0:N"
-        | Direction.West -> "0:0:W"
+        | Direction.West -> $"{rover.x}:0:W"
         | Direction.South -> "0:0:S"
         | Direction.East -> $"{rover.x}:0:E"
 
