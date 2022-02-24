@@ -15,6 +15,7 @@ module MoveTest =
 
     [<Test>]
     [<TestCase("RMLLM", "0:0:W")>]
+    [<TestCase("RRMLLMM", "0:0:W")>]
     let moveLeft (command: string, expectedPosition: string) =
         let rover = NewRover()
         let updatedRover = Navigate(rover, command)
