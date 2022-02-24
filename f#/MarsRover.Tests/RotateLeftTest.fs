@@ -3,9 +3,11 @@ namespace MarsRover.Tests
 open NUnit.Framework
 open Rover
 
-module RotateLeftTest =    
+module RotateLeftTest =
 
     [<Test>]
-    let RotateLeft () =
+    [<TestCase("L", "0:0:W")>]
+    let RotateLeft (command: string, expectedPosition: string) =
         let rover = NewRover()
-        Assert.AreEqual("0:0:W", Position(Navigate(rover, "L")))
+        let updatedRover = Navigate(rover, command)
+        Assert.AreEqual(expectedPosition, Position(updatedRover))
