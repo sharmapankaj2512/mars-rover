@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Include="Direction.fs" />
     <Compile Include="Rover.fs" />
+    <Compile Include="RoverController.fs" />
   </ItemGroup>
 
 </Project>

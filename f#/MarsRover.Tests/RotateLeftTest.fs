@@ -1,7 +1,8 @@
 namespace MarsRover.Tests
 
 open NUnit.Framework
-open Rover
+open MarsRover.Rover
+open MarsRover.RoverController
 
 module RotateLeftTest =
 

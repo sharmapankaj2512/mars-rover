@@ -1,4 +1,4 @@
-namespace MarsRover.Tests
+namespace MarsRover
 
 open Direction
 
@@ -31,14 +31,4 @@ module Rover =
         | Direction.North -> $"{rover.x}:0:N"
         | Direction.West -> $"{rover.x}:0:W"
         | Direction.South -> "0:0:S"
-        | Direction.East -> $"{rover.x}:0:E"
-
-    let Navigate (rover: Rover, command: string) =
-        let rec helper (rover, commands) =
-            match commands with
-            | 'L' :: tail -> helper (rotateLeft rover, tail)
-            | 'R' :: tail -> helper (rotateRight rover, tail)
-            | 'M' :: tail -> helper (move rover, tail)
-            | [] -> rover
-
-        helper (rover, command |> List.ofSeq)
+        | Direction.East -> $"{rover.x}:0:E"    

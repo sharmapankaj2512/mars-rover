@@ -1,7 +1,7 @@
 namespace MarsRover.Tests
 
 open NUnit.Framework
-open Rover
+open MarsRover.Rover
 
 module PositionTest =
 

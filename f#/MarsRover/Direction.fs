@@ -1,4 +1,4 @@
-namespace MarsRover.Tests
+namespace MarsRover
 
 module Direction =
     type Direction =
