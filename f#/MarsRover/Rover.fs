@@ -19,7 +19,10 @@ module Rover =
         { rover with
               x = (rover.x + 1) % MoveLimit }
 
-    let moveLeft (rover: Rover) = { rover with x = rover.x - 1 }
+    let moveLeft (rover: Rover) =
+        match rover.x with
+        | x when x - 1 < 0 -> { rover with x = 0 }
+        | _ -> { rover with x = rover.x - 1 }
 
     let move (rover: Rover) =
         match rover.direction with
@@ -31,4 +34,4 @@ module Rover =
         | Direction.North -> $"{rover.x}:0:N"
         | Direction.West -> $"{rover.x}:0:W"
         | Direction.South -> "0:0:S"
-        | Direction.East -> $"{rover.x}:0:E"    
+        | Direction.East -> $"{rover.x}:0:E"

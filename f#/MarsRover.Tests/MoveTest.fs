@@ -31,3 +31,11 @@ module MoveTest =
         let rover = NewRover()
         let updatedRover = Navigate(rover, command)
         Assert.AreEqual(expectedPosition, Position(updatedRover))
+
+    [<Test>]
+    [<TestCase("LM", "0:0:W")>]
+    [<TestCase("LMMMM", "0:0:W")>]
+    let wrapLeft (command: string, expectedPosition: string) =
+        let rover = NewRover()
+        let updatedRover = Navigate(rover, command)
+        Assert.AreEqual(expectedPosition, Position(updatedRover))
