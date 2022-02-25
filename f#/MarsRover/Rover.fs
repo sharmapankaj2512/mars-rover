@@ -3,6 +3,7 @@ namespace MarsRover.Tests
 open Direction
 
 module Rover =
+    let MoveLimit = 11
     type Rover = { x: int; direction: Direction }
     let NewRover () = { x = 0; direction = Direction.North }
 
@@ -16,7 +17,9 @@ module Rover =
 
     let move (rover: Rover) =
         match rover.direction with
-        | Direction.East -> { rover with x = rover.x + 1 }
+        | Direction.East ->
+            { rover with
+                  x = (rover.x + 1) % MoveLimit }
         | Direction.West -> { rover with x = rover.x - 1 }
 
     let Position (rover: Rover) =
@@ -31,7 +34,7 @@ module Rover =
             match commands with
             | 'L' :: tail -> helper (rotateLeft rover, tail)
             | 'R' :: tail -> helper (rotateRight rover, tail)
-            | 'M' :: tail -> helper (move rover, tail)            
+            | 'M' :: tail -> helper (move rover, tail)
             | [] -> rover
 
         helper (rover, command |> List.ofSeq)
